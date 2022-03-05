@@ -31,3 +31,4 @@ router.post('/',
         //res.render('form', { title: 'Registration form' });
 
 module.exports = router;
+// module.exports = router;
