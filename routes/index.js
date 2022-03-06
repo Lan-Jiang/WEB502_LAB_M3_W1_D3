@@ -16,18 +16,18 @@ router.post('/',
         .withMessage('Please enter an email'),
     ],
     function(req, res) {
-        console.log(req.body);
-        // const errors = validationResult(req);
-        // if (errors.isEmpty()) {
-        //     res.send('Thank you for your registration!');
-        // } else {
-        //     res.render('form', {
-        //         title: 'Registration form',
-        //         errors: errors.array(),
-        //         data:req.body,
-        //     });
-        // }
-        res.render('form', { title: 'Registration form' });
+        //console.log(req.body);
+        const errors = validationResult(req);
+        if (errors.isEmpty()) {
+            res.send('Thank you for your registration!');
+        } else {
+            res.render('form', {
+                title: 'Registration form',
+                errors: errors.array(),
+                data:req.body,
+            });
+        }
+        // res.render('form', { title: 'Registration form' });
 
         });
 
